@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 // creating blog post schema 
 const blogPostSchema = new mongoose.Schema({
 
@@ -25,6 +26,7 @@ const blogPostSchema = new mongoose.Schema({
     }
 
 });
+
 
 // exporting Blog post model
 const blogPost  = mongoose.model('blogPost', blogPostSchema);
