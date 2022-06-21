@@ -1,14 +1,11 @@
-const blogPost = require('../model/blogPost');
+const blogPost = require('../model/Blogpost');
 
 
 // Post blog post
 
 const postBlog =  async (req , res) =>{
-        const postBlog = new blogPost({
-            title:req.body.title,
-            content: req.body.content,
-            author: req.body.author 
-            });
+  const {  title , content , author} = req.body
+        const postBlog = new blogPost({title , content , author});
       const addBlogpost =   await postBlog.save();
         res.status(200);
         res.json({addBlogpost});
