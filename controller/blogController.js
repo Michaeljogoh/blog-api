@@ -16,16 +16,15 @@ const postBlog =  async (req , res) =>{
 
 // Get Blog Post
 const getBlogPost = async (req , res) =>{
-    let { page, size } = req.query
-    if (!page) page = 1;
-    if (!size) size = 10;
-    const limit = parseInt(size)
-    const skip = (page - 1) * size
-  const getBlogPost = await blogPost.find({}).limit(limit).skip(skip);
-  const previous_pages = page - 1;
-    const next_pages = Math.ceil((total_documents-skip)/size);
-   res.status(200);
-   res.json({getBlogPost}); 
+  // pagination
+  const {page , perPage} = req.query;
+  const options = {
+    page: parseInt(page , 10) || 1,
+    limit: parseInt(perPage, 5) || 5,
+  }
+const getBlogPost = await blogPost.paginate({}, options);
+  res.status(200);
+  res.json({getBlogPost}); 
 };
 
 // Patch Blog Post

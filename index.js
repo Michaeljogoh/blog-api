@@ -1,14 +1,18 @@
 const express  = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv').config();
+const cors = require('cors');
 const blogRoutes = require('./routes/blogRoutes');
 const errorHandler = require('./middleware/errorHandler')
 
 // Connect to mongoDB
 mongoose.connect(process.env.MongoDB_URI, {useNewUrlParser: true , useUnifiedTopology:true})
 .then(() => console.log("MongoDB"))
-.catch(err => console.log(err))
+.catch(err => console.log(err));
+
+// cors
+app.use(cors);
 
 // Get data in json
 app.use(express.json());

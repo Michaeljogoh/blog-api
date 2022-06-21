@@ -1,5 +1,0 @@
-
- GET   http://localhost:4000/blogposts
- Content-Type: application/json
-
-
