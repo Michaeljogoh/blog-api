@@ -1,29 +1,26 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const {postBlog, getBlogPost, patchBlogPost ,  deleteBlogPost} = require('../controller/blogController')
 
 
 
 
 // post blog posts
-router.post('/blogposts', (req , res)=>{
+router.post('/blogposts', postBlog);
 
-});
-
-// Get blog post paginational
+// Get blog post 
 router.get('/', (req, res)=>{
-    res.send("Hello here we are aigain")
+    res.send("Hello here!!!")
 });
+
+router.get('/blogposts', getBlogPost)
 
 // Patch blog posts
-router.patch('/blogposts', (req, res)=>{
-
-});
+router.patch('/blogposts/:id', patchBlogPost);
 
 //  Delet blog post
-router.delete('/blogposts', (req , res ) =>{
-
-});
+router.delete('/blogposts/:id', deleteBlogPost);
 
 
 
