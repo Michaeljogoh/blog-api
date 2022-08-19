@@ -2,10 +2,23 @@
 Blog application is a rest-api 
 
 # dependencies
-express.js
-mongoose
-mongoose.paginate
-dotenv
+- express.js
+- mongoose
+- dotenv
 
-# npm start
+## Features
+
+- Utilizes the Express web framework.
+- Uses MongoDB on the backend.
+- Easy Heroku integration.
+- Create, edit, and delete your posts.
+
+## Postman Documentation
+
+```
+https://documenter.getpostman.com/view/21519072/VUqoReag
+
+```
+
+
 
