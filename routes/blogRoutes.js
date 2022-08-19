@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const {postBlog, getBlogPost, patchBlogPost ,  deleteBlogPost} = require('../controller/blogController')
+const {postBlog, getBlogPost, patchBlogPost ,  deleteBlogPost} = require('../controller/blogController');
+const {comment , fetchComment , deleteComment} = require('../controller/commentController');
+
+
 
 
 
@@ -14,8 +17,15 @@ router.get('/', getBlogPost)
 // Patch blog posts
 router.patch('/blogposts/:id', patchBlogPost);
 
-//  Delet blog post
+//  Delete blog post
 router.delete('/blogposts/:id', deleteBlogPost);
+
+
+router.post('/:id', comment);
+
+router.get('/comments', fetchComment);
+
+router.delete('/:id', deleteComment)
 
 
 

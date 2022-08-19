@@ -1,6 +1,7 @@
 const blogPost = require('../model/Blogpost');
 
 
+
 // Post blog post
 
 const postBlog =  async (req , res) =>{
